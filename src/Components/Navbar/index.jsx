@@ -9,6 +9,11 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
     var username="arun"
     const Navigate = useNavigate()
+
+    const handleThrowError = () => {
+        throw new Error("Some error")
+    }
+
   return (
     <div className="navbar-container col-md-12 col-xs-12">
         <div className="navbar-left">
@@ -24,6 +29,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
             <div className="navbar-links">
+                <span onClick={handleThrowError}>Throw Error</span>
                 <span>Homepage</span>
                 <span>Timeline</span>
             </div>
